@@ -27,6 +27,7 @@ import 'package:pixez/page/novel/component/novel_bookmark_button.dart';
 import 'package:pixez/page/novel/component/novel_lighting_store.dart';
 import 'package:pixez/page/novel/viewer/novel_viewer.dart';
 import 'package:pixez/utils/haptic_util.dart';
+import 'package:pixez/page/novel/component/novel_long_press_save.dart';
 
 class NovelRecomPage extends StatefulWidget {
   @override
@@ -123,6 +124,11 @@ class _NovelRecomPageState extends State<NovelRecomPage>
                     novelStore: _store.novels[index],
                   )));
         },
+        onLongPress: () => novelLongPressSave(
+          context,
+          id: novel.id,
+          title: novel.title,
+        ),
         child: Card(
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,

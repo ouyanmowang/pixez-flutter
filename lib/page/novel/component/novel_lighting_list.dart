@@ -26,6 +26,7 @@ import 'package:pixez/page/novel/component/novel_bookmark_button.dart';
 import 'package:pixez/page/novel/component/novel_lighting_store.dart';
 import 'package:pixez/page/novel/viewer/novel_viewer.dart';
 import 'package:pixez/exts.dart';
+import 'package:pixez/page/novel/component/novel_long_press_save.dart';
 
 class NovelLightingList extends StatefulWidget {
   final FutureGet futureGet;
@@ -113,6 +114,11 @@ class _NovelLightingListState extends State<NovelLightingList> {
                         novelStore: _store.novels[index],
                       )));
             },
+            onLongPress: () => novelLongPressSave(
+              context,
+              id: novel.id,
+              title: novel.title,
+            ),
             child: Card(
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
